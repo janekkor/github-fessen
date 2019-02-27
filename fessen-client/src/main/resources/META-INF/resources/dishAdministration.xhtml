@@ -1,0 +1,38 @@
+<ui:composition template="mainTemplate.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ui:define name="content">
+		<h:form id="pagination-form">
+			<p:panel header="Gerichteübersicht.">
+			
+				<p:dataTable var="dish" value="#{dishBean.dishes}" rows="5"
+					paginator="true"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+	
+					<p:column headerText="Gerichtsname">
+						<h:outputText value="#{dish.name}" />
+					</p:column>
+	
+					<p:column headerText="Beschreibung">
+						<h:outputText value="#{dish.description}" />
+					</p:column>
+	
+					<p:column headerText="Geändert von">
+						<h:outputText value="#{dish.modUser}" />
+					</p:column>
+	
+					<p:column headerText="Geändert am">
+						<h:outputText value="#{dish.modTime}">
+							<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+						</h:outputText>
+					</p:column>
+				</p:dataTable>
+			</p:panel>
+	
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Bald kann man hier was leckeres bestellen :)) Mniam
+		mniam</title>
+</h:head>
+
+<h:body>
+	<div id="welcomeDiv" style="width: 100%; text-align: center">
+		<h:outputFormat id="welcomeText" value="#{msg.menu_welcome}" style="font-size: 50px">
+            <f:param value="#{userBean.currentUserName}" />
+        </h:outputFormat>
+					
+	</div>
+	<p:separator />
+	<h:form>
+		<h:panelGrid id="loginFields" cellpadding="5">
+			<p:commandButton value="#{msg.menu_select_your_dish}"
+				action="individualDishSelection.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_administration}"
+				action="dishAdministration.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_dish_choice}"
+				action="selectedDishes.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_suggestions}"
+				action="suggestions.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_archive}"
+				action="archive.xhtml?faces-redirect=true"  />
+            <p:selectOneMenu id="language" value="#{languageBean.lang}" style="width:150px" >
+            	<p:ajax listener="#{languageBean.onLanguageChange}" update="welcomeText" />
+                <f:selectItem itemLabel="#{msg.menu_selectLanguage}" itemValue="" noSelectionOption="false" />
+                <f:selectItems value="#{languageBean.langs}" />
+            </p:selectOneMenu>	
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

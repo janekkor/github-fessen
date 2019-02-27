@@ -1,0 +1,31 @@
+<ui:composition template="mainTemplate.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<ui:define name="content">
+		<h:outputText value="Archiv" style="font-size: 50px"/>
+	
+		<p:separator />
+		
+		<p:dataTable var="schedule" value="#{dishBean.allSchedules}">
+		    <p:column headerText="Vorname">
+		        <h:outputText value="#{schedule.user.firstName}" />
+		    </p:column>
+		 
+		    <p:column headerText="Gericht">
+		        <h:outputText value="#{schedule.dish.name}" />
+		    </p:column>
+		 
+		    <p:column headerText="Datum">
+		        <h:outputText value="#{schedule.day}" >
+		        	<f:convertDateTime pattern="dd.MM.yyyy" timeZone="CET"/>
+		        </h:outputText>	
+		    </p:column>
+		</p:dataTable>
+
+	</ui:define>
+</ui:composition>
+

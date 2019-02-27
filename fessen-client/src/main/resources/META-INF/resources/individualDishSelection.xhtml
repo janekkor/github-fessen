@@ -1,0 +1,53 @@
+<ui:composition template="mainTemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:define name="content">
+		<h:outputText value="#{msg.dishSelection_welcome}"
+			style="font-size: 50px" />
+		<p:separator />
+
+		<h:form>
+			<h:panelGrid id="dishSelectionPanel0" columns="3" cellpadding="5">
+				<h:outputText value="#{userBean.getCurrentUserFirstName()}" />
+				<p:selectOneMenu id="dishSelectOneMenu0"
+					value="#{dishBean.selectedDish}" required="true" style="width:150px">
+					<p:ajax listener="#{dishBean.onDishChange}" />
+					<f:selectItem itemLabel="#{msg.dishSelection_select_dish}"
+						itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{dishBean.guiDishes}" />
+				</p:selectOneMenu>
+				<p:selectOneMenu id="dateSelectOneMenu0"
+					value="#{dishBean.selectedFessenDay}" required="true" style="width:150px">
+					<f:selectItem itemLabel="#{msg.dishSelection_select_fessen_day}"
+						itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{dishBean.nextFessenDays}" />
+				</p:selectOneMenu>
+				<h:commandButton value="#{msg.save}" action="#{dishBean.saveDishSelection()}" >
+					<f:ajax execute="@form" render="selectionTable" />
+				</h:commandButton>
+			</h:panelGrid>
+
+			<p:separator />
+
+			<h:outputText value="#{msg.dishSelection_current}"
+				style="font-size: 20px" />
+
+			<p:dataTable id="selectionTable" var="mySchedule" value="#{dishBean.mySchedules}">
+
+				<p:column headerText="Gericht">
+					<h:outputText value="#{mySchedule.dish.name}" />
+				</p:column>
+
+				<p:column headerText="Datum">
+					<h:outputText value="#{mySchedule.day}">
+						<f:convertDateTime pattern="dd.MM.yyyy" timeZone="CET" />
+					</h:outputText>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

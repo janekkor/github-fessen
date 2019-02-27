@@ -1,0 +1,2 @@
+INSERT INTO APP_ROLE (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME) VALUES (0, 'ROLE_ADMIN', 'Administrator role.', 'admin', parsedatetime('2018-11-20 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO APP_ROLE (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME) VALUES (1, 'ROLE_USER', 'User role.', 'admin', parsedatetime('2018-11-20 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));

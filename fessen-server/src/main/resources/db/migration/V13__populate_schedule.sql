@@ -1,0 +1,4 @@
+INSERT INTO SCHEDULE (ID, USER_ID, DISH_ID, DAY, MOD_USER, MOD_TIME) VALUES (1, 1, 1, parsedatetime('2019-01-25 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'), 'admin', parsedatetime('2018-11-20 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO SCHEDULE (ID, USER_ID, DISH_ID, DAY, MOD_USER, MOD_TIME) VALUES (2, 2, 2, parsedatetime('2019-02-01 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'), 'admin', parsedatetime('2018-11-20 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO SCHEDULE (ID, USER_ID, DISH_ID, DAY, MOD_USER, MOD_TIME) VALUES (3, 3, 3, parsedatetime('2019-02-08 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'), 'admin', parsedatetime('2018-11-20 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO SCHEDULE (ID, USER_ID, DISH_ID, DAY, MOD_USER, MOD_TIME) VALUES (4, 4, 4, parsedatetime('2019-02-15 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'), 'admin', parsedatetime('2018-11-20 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));

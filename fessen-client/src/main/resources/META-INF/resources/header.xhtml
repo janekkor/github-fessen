@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:outputFormat id="welcomeText" value="#{msg.menu_welcome}" style="font-size: 50px">
+           <f:param value="#{userBean.getCurrentUserFirstName()}" />
+    </h:outputFormat>
+    
+    <div style="text-align: right;"> 
+    	<!-- ?faces-redirect=true is important - it correctly refreshes the current URL name in the browser,
+    	 after the Button link has been followed -->
+    	<p:commandButton value="#{msg.menu_page}" action="/menuPage.xhtml?faces-redirect=true" />
+    	<p:commandLink value="Menu" action="/menuPage.xhtml?faces-redirect=true"/>
+	</div>
+
+</ui:composition>

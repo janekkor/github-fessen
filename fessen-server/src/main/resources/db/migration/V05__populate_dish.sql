@@ -1,0 +1,5 @@
+INSERT INTO DISH (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME,) VALUES (1, 'Pizza', 'Pizza mniam mniam', 'admin', parsedatetime('2018-09-02 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO DISH (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME,) VALUES (2, 'Lasagne', 'Lasagne mniam mniam', 'iwkor',  parsedatetime('2018-09-02 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO DISH (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME,) VALUES (3, 'Tortilla', 'Tortilla mniam mniam', 'dokor',  parsedatetime('2018-09-02 00:00:00.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO DISH (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME,) VALUES (4, 'Toast', 'Toast mniam mniam', 'ewkor', parsedatetime('2018-09-12 08:30:25.000', 'yyyy-MM-dd hh:mm:ss.SS'));
+INSERT INTO DISH (ID, NAME, DESCRIPTION, MOD_USER, MOD_TIME,) VALUES (5, 'Brötchen überbacken', 'Brötchen überbacken mniam mniam', 'jakor', parsedatetime('2018-09-12 08:30:25.000', 'yyyy-MM-dd hh:mm:ss.SS'));

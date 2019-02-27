@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:form>
+		<h:panelGrid id="loginFields" cellpadding="5">
+			<p:commandButton value="#{msg.menu_select_your_dish}"
+				action="individualDishSelection.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_administration}"
+				action="dishAdministration.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_dish_choice}"
+				action="selectedDishes.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_suggestions}"
+				action="suggestions.xhtml?faces-redirect=true" />
+			<p:commandButton value="#{msg.menu_archive}"
+				action="archive.xhtml?faces-redirect=true"  />
+            <p:selectOneMenu id="language" value="#{languageBean.lang}" style="width:150px" >
+            	<p:ajax listener="#{languageBean.onLanguageChange}" update="welcomeText" />
+                <f:selectItem itemLabel="#{msg.menu_selectLanguage}" itemValue="" noSelectionOption="false" />
+                <f:selectItems value="#{languageBean.langs}" />
+            </p:selectOneMenu>	
+		</h:panelGrid>
+	</h:form>
+	
+</ui:composition>
