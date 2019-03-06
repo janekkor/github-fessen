@@ -51,6 +51,7 @@ public class DishController {
 		return new ResponseEntity<Schedule>(savedSchedule, HttpStatus.CREATED);
 	}
 	
+	//Test mappings
 	@RequestMapping("/mama")
 	public String mamasMethod( ) {
 		return "Hallo Mama, lass uns Freitagsessen Bestellapplikation zusammenbasteln!";
