@@ -4,8 +4,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-	<h:form>
 		<h:panelGrid id="loginFields" cellpadding="5">
+		<!-- ?faces-redirect=true is important - it correctly refreshes the current URL name in the browser,
+    	 after the Button link has been followed -->
 			<p:commandButton value="#{msg.menu_select_your_dish}"
 				action="individualDishSelection.xhtml?faces-redirect=true" />
 			<p:commandButton value="#{msg.menu_administration}"
@@ -22,6 +23,5 @@
                 <f:selectItems value="#{languageBean.langs}" />
             </p:selectOneMenu>	
 		</h:panelGrid>
-	</h:form>
 	
 </ui:composition>
