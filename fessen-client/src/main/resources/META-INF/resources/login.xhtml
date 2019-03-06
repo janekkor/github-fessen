@@ -7,62 +7,36 @@
 
 <h:head>
 	<title>#{msg.login_window_title}</title>
+
+	<link href="login1.css" rel="stylesheet" type="text/css"/>
 </h:head>
 
 <h:body>
-		<h:form prependId="false">
-			<div style="width: 100%; text-align: center">
-				<h:outputText value="#{msg.login_title}" style="font-size: 50px" />
-			</div>
-			<p:separator />
-	
-			<p:messages id="messages" showDetail="true" autoUpdate="true" />
-			
-			<p:separator />
-			
-		    <p:panelGrid columns="1">
-		      <h2>Please login</h2>
-		
-		      <p:outputLabel value="Login failed!" style="color:red"
-		        rendered="${!empty param.error}" />
-		
-		      <p:inputText id="username" placeholder="User name"/>
-		      <p:password id="password" placeholder="Password" />
-		
-		      <p:commandButton value="Login" ajax="false"/>
-		    </p:panelGrid>
-		    <!--  value="#{userBean.currentUser}" converter="converter.AppUserConverter" -->
-		</h:form> 
+	<h:form prependId="false">
+		<div style="width: 100%; text-align: center">
+			<h:outputText value="#{msg.login_title}" style="font-size: 50px" />
+		</div>
+		<p:separator />
 
-		Checkin z komputera Iwonki!
+		<p:messages id="messages" showDetail="true" autoUpdate="true" />
 
-		ToDo:
-		<p/>
-			- Logik der Speisenzuordnung implementieren
-			<p/>
-			- "Menu"-Button auf Gerichtsübersicht zum Laufen bringen
-			<p/>
-			- Message als Aktionsbestätigung oder Info, dass es nicht geklappt hat (z.B. nach Speichern)
-			<p/>
-			- admin bei Gerichtsauswahl verhindern
-			
-			<p/>
-			- Source code unter git bringen
-			<p/>
-			- Logout-Button in Header implementieren
-			<p/>
-			- Anzeige/Auswahl von Dishes von String auf Dish umstellen in individualDishSelection/DishBean selectedDish
-			<p/>
-			- Pages mit CSS/Formattierug hübscher machen
-			<p/>
-			- Definiere und konfiguriere error-Page
-			<p/>
-			- Definiere und konfiguriere accessDenied-Page
-			<p/>
-			- "Schwänzchen" in polnischen Buchstaben hinzufügen - in messages_pl.properties
-			<p/>
-			- Registrierungsfunktionalität implementieren
-			<p/>
-			- Passwort ändern implementieren
+		<p:separator />
+
+		<p:panelGrid columns="1">
+			<h2>Please login !!</h2>
+
+			<p:outputLabel value="Login failed!" style="color:red"
+				rendered="${!empty param.error}" />
+
+			<p:inputText id="username" placeholder="User name" />
+			<p:password id="password" placeholder="Password" />
+
+			<p:commandButton value="Login" ajax="false" />
+		</p:panelGrid>
+		<!--  value="#{userBean.currentUser}" converter="converter.AppUserConverter" -->
+	</h:form>
+
+
+
 </h:body>
 </html>
