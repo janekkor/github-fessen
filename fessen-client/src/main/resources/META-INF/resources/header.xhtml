@@ -9,10 +9,7 @@
     </h:outputFormat>
     
     <div style="text-align: right;"> 
-    	<!-- ?faces-redirect=true is important - it correctly refreshes the current URL name in the browser,
-    	 after the Button link has been followed -->
-    	<p:commandButton value="#{msg.menu_page}" action="/menuPage.xhtml?faces-redirect=true" />
-    	<p:commandLink value="Menu" action="/menuPage.xhtml?faces-redirect=true"/>
+    	<a href="menuPage.xhtml">#{msg.menu_page}</a>
 	</div>
 
 </ui:composition>
