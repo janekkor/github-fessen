@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
         http.authorizeRequests()
             	// require all requests to be authenticated except for the resources
-                .antMatchers("/javax.faces.resource/**", "/", LOGIN_PAGE).permitAll()
+                .antMatchers("/javax.faces.resource/**","/*.css", "/", LOGIN_PAGE).permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
