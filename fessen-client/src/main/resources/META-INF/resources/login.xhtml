@@ -8,13 +8,16 @@
 <h:head>
 	<title>#{msg.login_window_title}</title>
 
-	<link href="login1.css" rel="stylesheet" type="text/css"/>
+	<link href="css/login.css" rel="stylesheet" type="text/css" />
 </h:head>
 
 <h:body>
 	<h:form prependId="false">
 		<div style="width: 100%; text-align: center">
 			<h:outputText value="#{msg.login_title}" style="font-size: 50px" />
+		</div>
+		<div style="text-align: right;">
+			<a href="logout">#{msg.logout}</a>
 		</div>
 		<p:separator />
 
