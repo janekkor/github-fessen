@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -40,17 +41,39 @@ public class DishBean {
 	private String selectedFessenDay;
 
 	List<String> nextFessenDays = null;
+	List<String> myNextFessenDays = null;
 
 	@PostConstruct
 	public void init() {
 		retrieveAllDishes();
-		getNextFourFirdayDates();
+		getNextFourFridayDates();
 		retrieveAllSchedules();
+		initMyNextFessenDays();
+	}
+
+	/**
+	 * Init my next fessen days with only my already scheduled fessen days and fessen days that are not yet reserved in the next X weeks
+	 */
+	private void initMyNextFessenDays() {
+		//add fessen days that are already reserved for me
+		this.myNextFessenDays = new ArrayList<>();
+		for (Schedule schedule : this.mySchedules) {
+			this.myNextFessenDays.add(formatDate(schedule.getDay()));
+		}
+		//add fessen days in the next X weeks that are not reserved by anyone
+		List<String> tempScheduleDays = new ArrayList<>();
+		for (Schedule schedule : allSchedules) {
+			tempScheduleDays.add(formatDate(schedule.getDay()));
+		}
+		List<String> tempNextFridays = getNextFourFridayDates();
+		tempNextFridays.removeAll(tempScheduleDays);
+		this.myNextFessenDays.addAll(tempNextFridays);
 	}
 
 	private void retrieveAllSchedules() {
 		this.allSchedules = drService.retrieveAllSchedules();
-		// TODO: sort allSchedules by date
+		//TODO: Sorting does not seem to work (in dropdown while choosing your next dish the dates are not sorted)
+		this.allSchedules.sort(Comparator.comparing(Schedule::getDay));
 		initializeSchedules();
 
 	}
@@ -116,8 +139,16 @@ public class DishBean {
 	public void setNextFessenDays(List<String> dates) {
 		this.nextFessenDays = dates;
 	}
+	
+	public List<String> getMyNextFessenDays() {
+		return myNextFessenDays;
+	}
 
-	public List<String> getNextFourFirdayDates() {
+	public void setMyNextFessenDays(List<String> myNextFessenDays) {
+		this.myNextFessenDays = myNextFessenDays;
+	}
+
+	public List<String> getNextFourFridayDates() {
 
 		if (this.nextFessenDays == null) {
 			this.nextFessenDays = new ArrayList<String>();

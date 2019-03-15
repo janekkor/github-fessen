@@ -24,7 +24,7 @@
 					value="#{dishBean.selectedFessenDay}" required="true" style="width:150px">
 					<f:selectItem itemLabel="#{msg.dishSelection_select_fessen_day}"
 						itemValue="" noSelectionOption="true" />
-					<f:selectItems value="#{dishBean.nextFessenDays}" />
+					<f:selectItems value="#{dishBean.myNextFessenDays}" />
 				</p:selectOneMenu>
 				<h:commandButton value="#{msg.save}" action="#{dishBean.saveDishSelection()}" >
 					<f:ajax execute="@form" render="selectionTable" />
