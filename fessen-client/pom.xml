@@ -50,7 +50,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
                         <!-- update this version to get rid of the security alert -->
-			<version>5.0.8.RELEASE</version> <!-- This version is needed to get ParameterizedTypeReference -->
+			<version>5.2.24.RELEASE</version> <!-- This version is needed to get ParameterizedTypeReference -->
 		</dependency>
 		<dependency>
 			<groupId>de.jan.boot</groupId>
